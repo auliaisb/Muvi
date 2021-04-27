@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">NBSAssessment</string>
+    <string name="title_popular">Popular Movies</string>
+    <string name="title_soon">Coming Soon</string>
+    <string name="title_showing">Showing result of </string>
+    <string name="search_hint">Search</string>
+</resources>

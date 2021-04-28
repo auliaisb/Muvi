@@ -1,40 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:layout_width="160dp"
-        android:layout_height="214dp"
-        android:id="@+id/image"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+    <data>
+        <variable
+            name="imageUrl"
+            type="String" />
+        <variable
+            name="title"
+            type="String" />
+        <variable
+            name="casts"
+            type="String" />
+    </data>
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/image"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="Lord of The Ring Trilogy - The Bla bla bla"
-        android:textSize="12sp"
-        android:lines="1"
-        android:ellipsize="end"
-        android:layout_marginTop="8dp"
-        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/casts"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/title"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="Michael Oliver, James Cook, Eden Hazard, Ospina, Jack Wilshere, Vin Diesel"
-        android:textSize="10sp"
-        android:lines="2"
-        android:ellipsize="end"
-        android:textColor="@color/white_60"
-        android:layout_marginTop="4dp"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="214dp"
+            android:id="@+id/image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/image"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Lord of The Ring Trilogy - The Bla bla bla"
+            android:textSize="12sp"
+            android:lines="1"
+            android:ellipsize="end"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/casts"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Michael Oliver, James Cook, Eden Hazard, Ospina, Jack Wilshere, Vin Diesel"
+            android:textSize="10sp"
+            android:lines="2"
+            android:ellipsize="end"
+            android:textColor="@color/white_60"
+            android:layout_marginTop="4dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

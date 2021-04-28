@@ -1,64 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="178dp"
-        android:layout_height="89dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"/>
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/image"
-        app:layout_constraintTop_toTopOf="@id/image"
-        app:layout_constraintEnd_toStartOf="@id/unfav_button"
-        android:ellipsize="end"
-        android:layout_marginStart="10dp"
-        android:textSize="16sp"
-        android:text="Hello World!" />
-    
-    <ImageButton
-        android:id="@+id/unfav_button"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/fav_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/title"/>
+    <data>
+        <variable
+            name="imageUrl"
+            type="String" />
+        <variable
+            name="title"
+            type="String" />
+        <variable
+            name="year"
+            type="String" />
+        <variable
+            name="genre"
+            type="String" />
+    </data>
 
-    <TextView
-        android:id="@+id/year"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/image"
-        app:layout_constraintTop_toBottomOf="@id/title"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="10dp"
-        android:textSize="14sp"
-        android:textColor="@color/white_70"
-        android:text="2021"
-        android:layout_marginTop="8dp"
-        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/genre"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/image"
-        app:layout_constraintTop_toBottomOf="@id/year"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="10dp"
-        android:textSize="12sp"
-        android:textColor="@color/white_40"
-        android:lines="2"
-        android:text="Adventure, Comedy, Sci-Fi, Action, Drama"
-        android:layout_marginTop="5dp"
-        />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="178dp"
+            android:layout_height="89dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/image"
+            app:layout_constraintTop_toTopOf="@id/image"
+            app:layout_constraintEnd_toStartOf="@id/unfav_button"
+            android:ellipsize="end"
+            android:layout_marginStart="10dp"
+            android:textSize="16sp"
+            android:text="Hello World!" />
+
+        <ImageButton
+            android:id="@+id/unfav_button"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/fav_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/title" />
+
+        <TextView
+            android:id="@+id/year"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/image"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="10dp"
+            android:textSize="14sp"
+            android:textColor="@color/white_70"
+            android:text="2021"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/genre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/image"
+            app:layout_constraintTop_toBottomOf="@id/year"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="10dp"
+            android:textSize="12sp"
+            android:textColor="@color/white_40"
+            android:lines="2"
+            android:text="Adventure, Comedy, Sci-Fi, Action, Drama"
+            android:layout_marginTop="5dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

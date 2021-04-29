@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -15,6 +16,13 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+        String apiToken = properties.getProperty('moviedbapiv3token')
+
+        buildConfigField "String", "BASEURL", "\"https://api.themoviedb.org/3/\""
+        buildConfigField "String", "apiToken", apiToken
     }
 
     buildTypes {
@@ -27,12 +35,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
 
     buildFeatures {
-        dataBinding true
+        viewBinding true
     }
 }
 
@@ -46,4 +55,37 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    def koin_version = "3.0.1"
+    implementation "io.insert-koin:koin-android:$koin_version"
+
+    implementation "com.hwangjr.rxbus:rxbus:1.0.6"
+
+    def rx_version = "1.1.6"
+
+    implementation "io.reactivex:rxjava:$rx_version"
+    implementation "io.reactivex:rxandroid:$rx_version"
+
+    def retrofit_version = "2.9.0"
+
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofit_version"
+
+    def room_version = "2.3.0"
+
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-rxjava3:$room_version"
+
+    debugImplementation 'com.readystatesoftware.chuck:library:1.1.0'
+    releaseImplementation 'com.readystatesoftware.chuck:library-no-op:1.1.0'
+
+    implementation ('com.github.bumptech.glide:glide:4.11.0'){
+        exclude group: 'com.android.support', module: 'appcompat-v4'
+    }
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
 }

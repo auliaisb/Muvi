@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/page_1"
+        android:id="@+id/home"
         android:enabled="true"
-        android:icon="@drawable/ic_favorite"
-        android:title="@string/favorites"/>
+        android:icon="@drawable/home_selector"
+        android:title=""/>
     <item
-        android:id="@+id/page_2"
+        android:id="@+id/popular"
         android:enabled="true"
-        android:icon="@drawable/ic_music"
-        android:title="@string/music"/>
+        android:icon="@drawable/popular_selector"
+        android:title=""/>
     <item
-        android:id="@+id/page_3"
+        android:id="@+id/favorite"
         android:enabled="true"
-        android:icon="@drawable/ic_places"
-        android:title="@string/places"/>
+        android:icon="@drawable/heart_selector"
+        android:title=""/>
     <item
         android:id="@+id/page_4"
         android:enabled="true"
-        android:icon="@drawable/ic_new"
-        android:title="@string/news"/>
+        android:icon="@drawable/grid"
+        android:title=""/>
 </menu>

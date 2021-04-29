@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
-        <variable
-            name="imageUrl"
-            type="String" />
-        <variable
-            name="movieTitle"
-            type="String" />
-        <variable
-            name="time"
-            type="String" />
-        <variable
-            name="genre"
-            type="String" />
-        <variable
-            name="synopsis"
-            type="String" />
-    </data>
-
-    <ScrollView
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
@@ -164,4 +145,3 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-</layout>
